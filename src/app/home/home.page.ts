@@ -10,7 +10,7 @@ import { PokeapiService } from '../Service/apiservice.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+id:number = 1;
   // Constructor del componente que recibe una instancia del servicio APIServiceService.
   constructor(private api: PokeapiService) {}
 
