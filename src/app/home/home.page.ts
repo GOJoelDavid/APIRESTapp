@@ -1,35 +1,72 @@
-// Importa el servicio APIServiceService y el decorador Component desde los módulos de Angular.
-
+import { PokeapiService } from './../Service/apiservice.service';
 import { Component } from '@angular/core';
-import { PokeapiService } from '../Service/apiservice.service';
 
-// Define el componente HomePage con su selector, plantilla y estilos.
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-id:number = 1;
-  // Constructor del componente que recibe una instancia del servicio APIServiceService.
+
+  pokemon:any ;
+  name = ""
+
   constructor(private api: PokeapiService) {}
 
-  // Método para obtener datos de un Pokémon dado su ID.
-  getPokemonDataID(id: number) {
-    try {
-      let pokemon;  // Declara una variable local para almacenar el nombre del Pokémon.
 
-      // Llama al método getPokemon del servicio y se suscribe al observable.
-      this.api.getPokemonID(id).subscribe((response => {
-        // Dentro de la función de éxito de la suscripción:
-        // Asigna el nombre del Pokémon a la variable local 'pokemon'.
-        pokemon = response.name;
-        // Imprime el nombre del Pokémon en la consola.
-        console.log(pokemon);
-      }));
+  getPokemonData(name: string) {
+  try {
+
+    this.api.getPokemonName(name).subscribe((response => {
+      this.pokemon = response;
+      console.log(this.pokemon)
+    }));
     } catch (error) {
-      // Captura cualquier error que pueda ocurrir durante la suscripción y lo imprime en la consola.
       console.log(error);
     }
   }
-}
+  pokemon2:any ;
+  name2 = ""
+
+  getPokemonData2(name2: string) {
+  try {
+
+    this.api.getPokemonName(name2).subscribe((response => {
+      this.pokemon2 = response;
+      console.log(this.pokemon2)
+    }));
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  item:any ;
+  itemid:string="" 
+  nameit = ""
+  getItemData(nameit: string) {
+    try {
+  
+      this.api.getItemName(nameit).subscribe((response => {
+        this.item = response;
+        console.log(this.item)
+      }));
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  
+  item2:any ;
+  itemid2:string="" 
+  nameit2 = ""
+  getItemData2(nameit2: string) {
+    try {
+  
+      this.api.getItemName(nameit2).subscribe((response => {
+        this.item2 = response;
+        console.log(this.item2)
+      }));
+      } catch (error) {
+        console.log(error);
+      }
+    }
+} 

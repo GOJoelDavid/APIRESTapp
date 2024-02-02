@@ -1,7 +1,28 @@
-ion-header{
-  height: 10%;
+ion-title{
   text-align: center;
 }
-ion-title{
-  margin-top: 1rem;
+ion-grid{
+  margin-left: 30rem;
+}
+ion-icon{
+  color: #3880ff;
+  font-size: 1.5rem;
+  margin-top: 0.8rem;
+  margin-left: 1rem;
+}
+ion-card-header{
+  display: flex;
+  flex-direction: row;
+}
+ion-card{
+  width: 45%;
+}
+.uno{
+  margin-left: -28rem;
+}
+ion-img{
+  width: 10rem;
+}
+.img1{
+  width: 15rem;
 }

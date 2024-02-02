@@ -1,8 +1,80 @@
-<ion-header><ion-title>Insumo 2 - Pokedex</ion-title></ion-header>
-<ion-content>
-  <ion-card>
-    <ion-label position="floating">Ingresa un dato:</ion-label>
-    <!-- Utiliza ngModel para enlazar el valor del input a una propiedad en tu componente -->
-    <ion-input [(ngModel)]="id" (ionChange)="getPokemonDataID(id)"></ion-input>
-  </ion-card>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Insumo 1 - Granda Joel Pokedex
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+
+        <ion-card>
+        <ion-card-header>
+          <ion-input label="ID : " placeholder="Input ID" type="number" [(ngModel)]="itemid"></ion-input>
+          <ion-icon (click)="getItemData(itemid)" name="search-outline"></ion-icon>
+        </ion-card-header>
+      
+        <ion-card-content>
+          {{item.name}}
+          <ion-img class="img2" [src]=item.sprites.default></ion-img>
+        </ion-card-content>
+      </ion-card>
+      
+    </ion-col>
+      <ion-col  class="uno">
+
+        <ion-card>
+          <ion-card-header>
+            <ion-input label="Name : " placeholder="Input Name" [(ngModel)]="itemid2"></ion-input>
+            <ion-icon (click)="getItemData2(itemid2)" name="search-outline"></ion-icon>
+          </ion-card-header>
+        
+          <ion-card-content>
+            {{item2.id}}
+            <ion-img class="img2" [src]=item2.sprites.default></ion-img>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+
+        <ion-card>
+          <ion-card-header>
+            <ion-input label="ID Pokemon : " placeholder="Input ID" type="number" [(ngModel)]="name"></ion-input>
+            <ion-icon (click)="getPokemonData(name)" name="search-outline"></ion-icon>
+          </ion-card-header>
+        
+          <ion-card-content>
+            {{pokemon.name}}
+            <ion-img class="img1" [src]=pokemon.sprites.front_default></ion-img>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+      <ion-col class="uno">
+
+        <ion-card>
+          <ion-card-header>
+            <ion-input label="Name Pokemon : " placeholder="Input Name" [(ngModel)]="name2"></ion-input>
+            <ion-icon (click)="getPokemonData2(name2)" name="search-outline"></ion-icon>
+          </ion-card-header>
+        
+          <ion-card-content>
+            {{pokemon2.id}}
+            <ion-img [src]=pokemon2.sprites.front_default class="img1"></ion-img>
+          </ion-card-content>
+        </ion-card>
+
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+
 </ion-content>
